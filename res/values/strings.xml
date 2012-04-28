@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Elk uur een alarm</string>
+    <string name="app_name">Hourlyreminder</string>
+    <string name="notification_title">Een eetnotificatie</string>
+    <string name="notification_message">Even eten</string>
+    <string name="notification_status_bar_text">Eten!</string>
+
+
+</resources>
