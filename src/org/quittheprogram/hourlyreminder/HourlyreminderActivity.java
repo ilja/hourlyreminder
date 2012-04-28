@@ -17,10 +17,8 @@ import android.widget.ToggleButton;
 public class HourlyreminderActivity extends Activity {
     private static final String ISALARMENABLED = "isAlarmEnabled";
 	private AlarmManager alarmManager;
-	final private long INTERVAL = 3600000; //30000 = 30 seconds, 3600000 = 1 hour
 	private SharedPreferences settings;
 	
-
 	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,7 +61,8 @@ public class HourlyreminderActivity extends Activity {
 		alarmManager.cancel(pendingAlarmIntent); //cancel existing alarms
 		
 		//add new alarm
-        alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), INTERVAL, pendingAlarmIntent);
+		//for testing: 30000 = 30 seconds
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), AlarmManager.INTERVAL_HOUR, pendingAlarmIntent);
         
         saveAlarmState(true);
 	}
